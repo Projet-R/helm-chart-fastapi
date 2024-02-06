@@ -19,5 +19,5 @@ hpa:
   percent: 80
 
 ingress:
-  http_port: 8001
-  https_port: 4443
+  http_port: 80
+  https_port: 443
