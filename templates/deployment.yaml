@@ -11,6 +11,8 @@ spec:
       app: {{ .Release.Name }}-fastapi
   template:
     metadata:
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
       labels:
         app: {{ .Release.Name }}-fastapi
     spec:
