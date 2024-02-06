@@ -28,12 +28,12 @@ spec:
             - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-creds
+                  name: db-creds-2
                   key: password
             - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
-                  name: db-creds
+                  name: db-creds-2
                   key: user
             - name: DATABASE_URL
               value: postgresql://$(DATABASE_USER):$(DATABASE_PASSWORD)@{{ .Values.deployment.dbEndPoint }}:5432/{{ .Values.deployment.dbName }}
