@@ -5,13 +5,14 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":{{ .Values.ingress.https_port }}}, {"HTTP":{{ .Values.ingress.http_port }}}]'
-    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-3:203271543287:certificate/64f5f1f6-d4e9-4713-ac46-8e36a3af6d1f
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":{{ .Values.ingress.https_port }}}, {"HTTP":{{ .Values.ingress.http_port }}}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-3:203271543287:certificate/c7e398b8-c4b8-466e-af03-cb12a21ba3fd
+    alb.ingress.kubernetes.io/ssl-redirect: '443'   
 spec:
   ingressClassName: alb
   rules:
   - http:
-        paths:
+        paths:           
           - path: /
             pathType: Prefix
             backend:
